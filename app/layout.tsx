@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans_Arabic } from "next/font/google";
 import "./globals.css";
-import ClientShell from "@/components/ui/ClientShell";
 
 const ibmPlex = IBM_Plex_Sans_Arabic({
   subsets: ["arabic", "latin"],
@@ -24,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl" data-scroll-behavior="smooth" className={`${ibmPlex.variable} antialiased`}>
       <body className="min-h-screen">
-        <ClientShell>{children}</ClientShell>
+        {children}
       </body>
     </html>
   );
