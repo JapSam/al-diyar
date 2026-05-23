@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-navy: #0A1628;
+  --color-navy-light: #132038;
+  --color-navy-lighter: #1a2d4a;
+  --color-gold: #C9A84C;
+  --color-gold-light: #d4b965;
+  --color-gold-dark: #b08f3a;
+  --font-sans: var(--font-ibm-plex);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #0A1628;
+  --card-bg: #f8f9fa;
+  --card-border: #e5e7eb;
+  --muted: #6b7280;
+  --section-alt: #f1f3f5;
+}
+
+[data-theme="dark"] {
+  --background: #0A1628;
+  --foreground: #f0f0f0;
+  --card-bg: #132038;
+  --card-border: #1a2d4a;
+  --muted: #9ca3af;
+  --section-alt: #0d1b2e;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gold) transparent;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-navy);
+}
+
+/* Custom cursor styles */
+.custom-cursor {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  mix-blend-mode: difference;
+}
+
+/* Loading screen */
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-navy);
+}
+
+/* Embla carousel */
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
