@@ -3,11 +3,9 @@
 import Link from "next/link";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ProjectCard from "@/components/ui/ProjectCard";
-import { projects } from "@/data/projects";
+import type { Project } from "@/data/projects";
 
-export default function FeaturedProjects() {
-  const featured = projects.filter((p) => p.featured);
-
+export default function FeaturedProjects({ projects }: { projects: Project[] }) {
   return (
     <section className="py-24" style={{ background: "var(--section-alt)" }}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -17,7 +15,7 @@ export default function FeaturedProjects() {
         />
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {featured.map((project) => (
+          {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>

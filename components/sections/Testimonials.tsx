@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 import { HiChevronRight, HiChevronLeft } from "react-icons/hi";
 import { FaStar } from "react-icons/fa6";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { testimonials } from "@/data/testimonials";
+import type { Testimonial } from "@/data/testimonials";
 
-export default function Testimonials() {
+export default function Testimonials({ testimonials }: { testimonials: Testimonial[] }) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ direction: "rtl", loop: true });
   const [selected, setSelected] = useState(0);
 
